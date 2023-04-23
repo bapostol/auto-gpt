@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:6.2-alpine
+    container_name: auto-gpt-redis
+    restart: always
+    hostname: redis
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass <your chosen redis password>
+    volumes: 
+      - cache:/data
+  auto-gpt:
+    container_name: auto-gpt
+    build:
+      context: containers/auto-gpt
+      args: 
+        VERSION: 0.2.2
+        OPENAPI_KEY: <add your key here>
+        REDIS_PASSWORD: <same chosen redis password>
+    depends_on:
+      - redis
+    volumes:
+      - ./files:/root/auto-gpt/files
+
+volumes:
+  cache:
+    driver: local
