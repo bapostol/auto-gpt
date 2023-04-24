@@ -7,7 +7,7 @@ This repo will help you setup Auto GPT in an easy to use Docker container.
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 2. Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 3. Obtain an [OpenAI key](https://platform.openai.com/account/api-keys).
-4. *(Optional)* Get [Visual Studio Code](https://code.visualstudio.com/Download).
+4. *(Optional)* Install [Visual Studio Code](https://code.visualstudio.com/Download).
 3. Clone this repo.
 
 ## Build the containers
